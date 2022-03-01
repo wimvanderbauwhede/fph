@@ -11,5 +11,5 @@
 	stack test
 
 * Read the specification on Moodle for more details.
-* Currently, ASTInstances.hs contains 5 instances, I will provide 5 more later.
+* ASTInstances.hs contains 10 instances. I will use the same instances for testing, so there are no hidden tests, but I will change the names of the identifiers and values of the constants. 
 
