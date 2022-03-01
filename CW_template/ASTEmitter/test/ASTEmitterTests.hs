@@ -18,6 +18,7 @@ import ASTEmitter (
 import ASTParser (
   parseBindings,
   parseMainArgDef,
+  parseDecl,
   parseFunDecl,
   parseStencilDef
   )

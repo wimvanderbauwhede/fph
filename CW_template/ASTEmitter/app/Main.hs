@@ -2,7 +2,7 @@
 module Main where
 
 import ASTEmitter (ppProgram)
-import ASTInstance (astInstance)
+import ASTInstances (astInstances)
 
 main :: IO ()
-main = ppProgram astInstance
+main = ppProgram (last astInstances)
