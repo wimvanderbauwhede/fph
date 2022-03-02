@@ -85,7 +85,9 @@ instance Eq Expr where
   (==) (Stencil s1 v1) (Stencil s2 v2) = (s1 == s2) && (v1 == v2)
   (==) _ _ = False
 
-listEq l1 l2 =  foldl' (&&) True (map (uncurry (==)) (zip l1 l2))
+listEq l1 l2 
+  | length l1 /= length l2 = False
+  | otherwise =  foldl' (&&) True (map (uncurry (==)) (zip l1 l2))
 
 sigTypes :: MainArgDecls -> ([DType],[DType])
 sigTypes mainArgDecls = let

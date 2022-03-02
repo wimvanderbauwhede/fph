@@ -312,22 +312,30 @@ ast6 =   [
   ]
 
 functionSignaturesList6 = [
-    ("f_1",  [
+    ("f_1",  [      
       Tuple [],
-      Scalar VT DFloat "w_1",
-      Tuple [Scalar VO DFloat "w_3",Scalar VO DFloat "w_3"]
+      Tuple [Scalar VI DFloat "u_0",Scalar VI DFloat "v_0"],
+      Scalar VT DFloat "u_1"
+      -- Scalar VT DFloat "w_1",
+      -- Tuple [Scalar VO DFloat "w_3",Scalar VO DFloat "w_3"]
     ]
     ),
     ("f_2",  [
-        Tuple [],
-        Scalar VT DFloat "w_1",
-        Tuple [Scalar VO DFloat "w_3",Scalar VO DFloat "w_3"]
+      Tuple [FVec [(0,7)] (Scalar VDC DFloat "fv_1"),FVec [(0,3)] (Scalar VDC DFloat "fv_2")],
+      Tuple [Scalar VI DFloat "v_0",Scalar VT DFloat "u_1"],
+      Tuple [Scalar VO DFloat "u_2",Scalar VT DFloat "v_3"]
+
+        -- Tuple [],
+        -- Scalar VT DFloat "w_1",
+        -- Tuple [Scalar VO DFloat "w_3",Scalar VO DFloat "w_3"]
       ]
     ),
     ("f_3",  [
         Tuple [],
-        Scalar VT DFloat "w_1",
-        Tuple [Scalar VO DFloat "w_3",Scalar VO DFloat "w_3"]
+        Tuple [Scalar VT DFloat "v_3",Scalar VI DFloat "u_0"],
+        Scalar VO DFloat "v_4"
+        -- Scalar VT DFloat "w_1",
+        -- Tuple [Scalar VO DFloat "w_3",Scalar VO DFloat "w_3"]
       ]
     ) 
   ]
