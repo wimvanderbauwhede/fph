@@ -423,8 +423,8 @@ fv_1 :: FVec [(0,7)] Float
 fv_2 :: FVec [(0,3)] Float
 f_1 :: Float -> Float
 f_2 :: Float -> Float
-f_3 :: (Float,Float,Float) -> Float
-f_4 :: (Float,Float,Float) -> Float
+f_3 :: FVec [(0,7)] Float -> (Float,Float,Float) -> Float
+f_4 :: FVec [(0,3)] Float -> (Float,Float,Float) -> Float
 main :: (Vec 16 Float,Vec 16 Float) -> Vec 16 Float
 main (u_0,v_0) = let
   v1_t = map f_1 u_0
@@ -484,14 +484,14 @@ functionSignaturesList8 = [
       ]
     ), 
     ("f_3",  [
-        Tuple [],
+        Tuple [FVec [(0,7)] (Scalar VDC DFloat "fv_1")],
         Tuple [Scalar VT DFloat "v1_t",Scalar VI DFloat "v_0", SVec 3 (Scalar VS DFloat "v_s1")],
         Scalar VT DFloat "u_1"
         
       ]
     ),
     ("f_4",  [
-        Tuple [],
+        Tuple [FVec [(0,3)] (Scalar VDC DFloat "fv_2")],
         Tuple [Scalar VT DFloat "v2_t",Scalar VI DFloat "u_0", SVec 3 (Scalar VS DFloat "v_s2")],
         Scalar VO DFloat "v_1"        
       ]
