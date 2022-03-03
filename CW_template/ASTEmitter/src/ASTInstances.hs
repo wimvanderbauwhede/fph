@@ -484,14 +484,14 @@ functionSignaturesList8 = [
       ]
     ), 
     ("f_3",  [
-        Tuple [FVec [(0,7)] (Scalar VDC DFloat "fv_1")],
+        FVec [(0,7)] (Scalar VDC DFloat "fv_1"),
         Tuple [Scalar VT DFloat "v1_t",Scalar VI DFloat "v_0", SVec 3 (Scalar VS DFloat "v_s1")],
         Scalar VT DFloat "u_1"
         
       ]
     ),
     ("f_4",  [
-        Tuple [FVec [(0,3)] (Scalar VDC DFloat "fv_2")],
+        FVec [(0,3)] (Scalar VDC DFloat "fv_2"),
         Tuple [Scalar VT DFloat "v2_t",Scalar VI DFloat "u_0", SVec 3 (Scalar VS DFloat "v_s2")],
         Scalar VO DFloat "v_1"        
       ]
