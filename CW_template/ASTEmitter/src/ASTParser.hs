@@ -273,12 +273,18 @@ f_no_nonmap_args = do
     fname <- identifier
     return $ Function fname []
 --
+f_w_nonmap_arg = do
+    fname <- identifier
+    non_map_arg <- identifier
+    return $ Function fname (map mkFVecExpr [non_map_arg])
+
 f_w_nonmap_args = do
     fname <- identifier
     non_map_args <- parens (commaSep1 identifier)
     return $ Function fname (map mkFVecExpr non_map_args)
 
-function_parser =  f_no_nonmap_args <|> parens f_w_nonmap_args
+-- Function parser parses f | (f dx1) | (f (dx1,...))        
+function_parser =  f_no_nonmap_args <|> try (parens f_w_nonmap_arg) <|> parens f_w_nonmap_args
 
 mkFVecExpr fv_n = FVec [] (Scalar VDC DDC fv_n) -- note that these could be bare scalars so lookup needs to test that
 

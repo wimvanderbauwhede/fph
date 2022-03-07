@@ -206,7 +206,7 @@ Test case 5: VI, VS and VT as input
 v_in :: Vec 16 Float
 v_out :: Vec 16 Float
 f1 :: Float -> Float
-f2 :: (Float,Float,Float) -> Float
+f2 :: (Float,SVec 3 Float,Float) -> Float
 main :: Vec 16 Float -> Vec 16 Float
 main v_in = let
   v_s = stencil s v_in
@@ -423,16 +423,17 @@ fv_1 :: FVec [(0,7)] Float
 fv_2 :: FVec [(0,3)] Float
 f_1 :: Float -> Float
 f_2 :: Float -> Float
-f_3 :: FVec [(0,7)] Float -> (Float,Float,Float) -> Float
-f_4 :: FVec [(0,3)] Float -> (Float,Float,Float) -> Float
+f_3 :: FVec [(0,7)] Float -> (Float,Float,SVec 3 Float) -> Float
+f_4 :: FVec [(0,3)] Float -> (Float,Float,SVec 3 Float) -> Float
+
 main :: (Vec 16 Float,Vec 16 Float) -> Vec 16 Float
 main (u_0,v_0) = let
   v1_t = map f_1 u_0
   v2_t = map f_2 v_0
   v_s1 = stencil s1 v2_t
   v_s2 = stencil s2 v1_t
-  u_1 = map f_3 fv_1 (zipt (v1_t,v_0,v_s1))
-  v_1 = map f_4 fv_2 (zipt (v2_t,u_0,v_s2))
+  u_1 = map (f_3 fv_1) (zipt (v1_t,v_0,v_s1))
+  v_1 = map (f_4 fv_2) (zipt (v2_t,u_0,v_s2))
 in 
   (u_1,v_1)
 -}
