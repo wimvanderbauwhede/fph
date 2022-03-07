@@ -1,5 +1,6 @@
 -- In this source file you can add additional test cases.
 -- Create them analogous to the examples below and put them in the astInstances list
+-- Note that the code in comments is not used for the tests, the ASTs are the reference.
 module ASTInstances ( 
           astInstances
         ) where
@@ -202,6 +203,8 @@ astInstance4 = (
 -- ============================================================================================================================================
 {-
 Test case 5: VI, VS and VT as input 
+
+s = [-1,0,1]
 
 v_in :: Vec 16 Float
 v_out :: Vec 16 Float
@@ -415,6 +418,9 @@ astInstance7 = (
 {-
 Test case 8:  
 
+s1 = [-1,0,1]
+s2 = [-4,2,4]
+
 u_0 :: Vec 16 Float
 v_0 :: Vec 16 Float
 u_1 :: Vec 16 Float
@@ -540,15 +546,15 @@ dy1_0 :: FVec [(0,151)] Float
 dz1_0 :: FVec [(-1,92)] Float
 
 -- Output arguments
-v_3 :: Vec 2074891 Float
-w_3 :: Vec 2074891 Float
+v_3 :: Vec 2139552 Float
+w_3 :: Vec 2139552 Float
 
 -- Function type declarations
 f_1 :: (FVec [(-1,151)] Float,FVec [(0,151)] Float,FVec [(-1,92)] Float) -> (SVec 5 Float,SVec 5 Float,SVec 4 Float) -> (Float,Float,Float)
 f_2 :: (FVec [(-1,151)] Float,FVec [(0,151)] Float) -> (SVec 2 Float,SVec 3 Float,SVec 2 Float) -> Float
 f_3 :: Float -> Float
 
-main :: (Vec 2139552 Float,Vec 2139552 Float,Vec 2139552 Float,FVec [(-1,151)] Float,FVec [(0,151)] Float,FVec [(-1,92)] Float) -> (Vec 2074891 Float,Vec 2074891 Float)
+main :: (Vec 2139552 Float,Vec 2139552 Float,Vec 2139552 Float,FVec [(-1,151)] Float,FVec [(0,151)] Float,FVec [(-1,92)] Float) -> (Vec 2139552 Float,Vec 2139552 Float)
 main (v_0,w_0,u_0,dx1_0,dy1_0,dz1_0) = let
     -- f_1
     v_s_0 = stencil s1 v_0
@@ -662,8 +668,8 @@ dy1_0 :: FVec [(0,151)] Float
 dz1_0 :: FVec [(-1,92)] Float
 
 -- Output arguments
-v_3 :: Vec 2074891 Float
-w_3 :: Vec 2074891 Float
+v_3 :: Vec 2139552 Float
+w_3 :: Vec 2139552 Float
 
 -- Function type declarations
 f_t1 :: (Float, SVec 5 Float ) -> Float
@@ -672,7 +678,7 @@ f_2 :: (FVec [(-1,151)] Float,FVec [(0,151)] Float) -> (SVec 2 Float,SVec 3 Floa
 f_t2 :: (Float, SVec 2 Float ) -> Float
 f_3 :: Float -> Float
 
-main :: (Vec 2139552 Float,Vec 2139552 Float,Vec 2139552 Float,FVec [(-1,151)] Float,FVec [(0,151)] Float,FVec [(-1,92)] Float) -> (Vec 2074891 Float,Vec 2074891 Float)
+main :: (Vec 2139552 Float,Vec 2139552 Float,Vec 2139552 Float,FVec [(-1,151)] Float,FVec [(0,151)] Float,FVec [(-1,92)] Float) -> (Vec 2139552 Float,Vec 2139552 Float)
 main (v_0,w_0,u_0,dx1_0,dy1_0,dz1_0) = let
     -- f_1
     v_s_0 = stencil s1 v_0
